@@ -23,7 +23,7 @@ app.post('/upload', (req, res) => {
         });
     }
 
-    res.send('Uploaded');
+    res.send('UPLOADED');
 })
 
 app.listen(process.env.PORT || 3000, () => {

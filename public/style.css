@@ -32,11 +32,18 @@ h1 {
     display: none;
 }
 
-#errorMessage {
+#errorMessage, #successMessage {
     font-family: "Calibri";
     font-size: 18px;
-    color: red;
     margin-bottom: 25px;
+}
+
+#errorMessage {
+    color: red;
+}
+
+#successMessage {
+    color: green;
 }
 
 #theImageTag {
@@ -45,4 +52,14 @@ h1 {
     left: 50%;
     width: 110%;
     transform: translateX(-50%);
+}
+
+.hide {
+    display: none;
+}
+
+#theImageContainer.dragging {
+    border-color: green;
+    border-width: 10px;
+    opacity: .3;
 }
