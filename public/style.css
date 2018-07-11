@@ -23,9 +23,26 @@ h1 {
     color: darkgrey;
     cursor: pointer;
     border-radius: 50%;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
 }
 
 #theImageField {
     display: none;
+}
+
+#errorMessage {
+    font-family: "Calibri";
+    font-size: 18px;
+    color: red;
+    margin-bottom: 25px;
+}
+
+#theImageTag {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 110%;
+    transform: translateX(-50%);
 }
