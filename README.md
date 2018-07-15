@@ -6,6 +6,11 @@
 $> npm install
 ```
 
+## Installing front-end dependencies
+```
+bower install
+```
+
 ## How to start the server
 ```
 $> npm start
