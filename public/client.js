@@ -64,7 +64,6 @@ function checkFileProperties(theFile) {
         console.log('File type mismatch');
         theErrorMessage.innerHTML = "File type should be png or jpg/jpeg...";
         theErrorMessage.classList.remove('hide');
-        this.value = null;
         return false;
     }
 
@@ -72,7 +71,6 @@ function checkFileProperties(theFile) {
         console.log('File too large');
         theErrorMessage.innerHTML = "File too large, cannot be more than 500KB...";
         theErrorMessage.classList.remove('hide');
-        this.value = null;
         return false;
     }
 
