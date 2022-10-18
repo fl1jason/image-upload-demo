@@ -6,7 +6,6 @@ var theSuccessMessage = document.querySelector('#successMessage');
 var theClearImageLink = document.querySelector('#clearImage');
 
 var fileName = "";
-
 [
     'drag', 
     'dragstart', 
@@ -81,25 +80,20 @@ function checkFileProperties(theFile) {
 theImageForm.onsubmit = function (e) {
     e.preventDefault();
     var theImageTag = document.querySelector('#theImageTag');
-    jQuery.ajax({
-        method: 'POST',
-        url: '/upload',
-        data: {
-            theFile: theImageTag.getAttribute('src'),
-            name: fileName
-        }
-    })
-    .done(function (resp) {
-        if(resp === "UPLOADED") {
-            theSuccessMessage.innerHTML = "Image uploaded successfully";
-            theSuccessMessage.classList.remove('hide');
-        }
-    })
+    console.log(`Height: ${theImageTag.height} Width: ${theImageTag.width}`);
+
+    const canvas = document.getElementById('theCanvas');
+    const name = document.getElementById('theName').value;
+
+    var ctx = canvas.getContext("2d");
+    
+    ctx.drawImage(theImageTag, 0, 0, theImageTag.width, theImageTag.height);
+    ctx.font = "24pt Calibri";
+    ctx.fillStyle = "white";
+    ctx.fillText(name, 40, 240);
 }
 
 theClearImageLink.onclick = clearImage;
-
-
 
 function preventDragDefault(e) {
     e.preventDefault();
@@ -133,4 +127,9 @@ function clearImage(e) {
 
     theErrorMessage.classList.add('hide');
     theSuccessMessage.classList.add('hide');
+
+    // Clear the canvas
+    const canvas = document.getElementById('theCanvas');
+    const context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
 }

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Image upload demo</title>
-    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,19 +13,28 @@
     <h1>Image upload demo</h1>
 
     <form id="theImageForm">
-        <label for="theImageField" id="theImageContainer">
-            <input type="file" id="theImageField" accept="image/png, image/jpeg">
-            Click here to upload or <b>drag-and-drop</b> an image...
-        </label>
-        <p id="errorMessage" class="hide"></p>
-        <p id="successMessage" class="hide"></p>
-        <button class="btn btn-lg btn-primary" type="submit">Upload</button>
-        <a href="" id="clearImage">Clear</a>
+
+        <div id="imageUpload">
+            <div for="theImageField" id="theImageContainer">
+                <input type="file" id="theImageField" accept="image/png, image/jpeg">
+                <b>drag-and-drop</b> an image...
+            </div>
+            <div id="imageOptions">
+                <input type="text" id="theName" maxlength="30">
+                <button class="btn-primary" type="submit">Add Text</button>                
+                <button class="btn-primary" id="clearImage" type="submit">Clear</button>                
+            </div>
+            <p id="errorMessage" class="hide"></p>
+            <p id="successMessage" class="hide"></p>
+        </div>
+    
+        <div id="imagePreview">
+            <div for="theName" id="theBadgeContainer">
+                <canvas id="theCanvas" width="300" height="300" ></canvas>
+            </div>
+        </div>
     </form>
 
-
-    <script src="/libs/jquery/dist/jquery.min.js"></script>
-    <script src="/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="client.js"></script>
 </body>
 
